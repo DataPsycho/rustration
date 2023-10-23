@@ -14,7 +14,7 @@ pub fn get_flag(flag: &str) -> Result<Flag, String> {
         "--slugify" | "-s" => Ok(Flag::Slugify),
         _ => {
             let available_flags =
-                "cargo run --lowercase/-l or --uppercase/-u or --no-space/-ns or --slugify/-s";
+                "--lowercase/-l or --uppercase/-u or --no-space/-ns or --slugify/-s";
             let err_text = format!(
                 "{} is not a valid flag. Available flags are: {}",
                 flag, available_flags
@@ -27,7 +27,7 @@ pub fn get_flag(flag: &str) -> Result<Flag, String> {
 pub fn parse_flag(args: Vec<String>) -> Result<Flag, String> {
     if args.len() < 2 {
         let example_txt =
-            "cargo run --lowercase/-l or --uppercase/-u or --no-space/-ns or --slugify/-s";
+            "--lowercase/-l or --uppercase/-u or --no-space/-ns or --slugify/-s";
         let err_text = format!(
             "Please provide a transformation flag to work with the text. Example: {}",
             example_txt
