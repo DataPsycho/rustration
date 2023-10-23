@@ -1,8 +1,7 @@
-#[macro_use] extern crate prettytable;
 mod flag;
-mod parser;
+mod multiline_parser;
 mod transform;
-use parser::receive_multiline_input_from_user;
+use multiline_parser::receive_multiline_input_from_user;
 use std::env;
 
 fn main() {
@@ -11,7 +10,7 @@ fn main() {
         eprintln!("Error: {}", e);
         std::process::exit(1);
     });
-
+    println!("Provide a string to transform. \nYou can provide multiline input and finally press enter to finish. \nStart Here: \n");
     let input = match receive_multiline_input_from_user() {
         Ok(input) => input,
         Err(e) => {
