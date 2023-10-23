@@ -1,39 +1,22 @@
-use slug::slugify;
+mod flag;
+mod transform;
 use std::env;
+
+fn receive_input_from_user() -> String {
+    eprintln!("Enter a text:");
+    let mut input = String::new();
+    std::io::stdin().read_line(&mut input).unwrap();
+    input
+}
 
 
 fn main() {
     let args: Vec<String> = env::args().collect();
-    if args.len() < 2 {
-        let example_txt = "cargo run --lowercase/-l or --no-space/-ns or --slugify/-s";
-        panic!("Please provide a transformation flag to work with the text. Example: {}", example_txt);
-    }
+    let flag = flag::parse_flag(args).unwrap();
 
-    println!("Enter a text:");
-    let mut input = String::new();
-    std::io::stdin().read_line(&mut input).unwrap();
+    let input = receive_input_from_user();
+    eprint!("Input: {}\n", input);
 
-    let flag = &args[1];
-    let flag = flag.as_str();
-
-    match flag{
-        "--lowercase" | "-l" => {
-            println!("Lowercased: {}", input.to_lowercase());
-        },
-        "--uppercase" | "-u" => {
-            println!("Uppercased: {}", input.to_uppercase());
-        },
-        "--no-spaces" | "-ns" => {
-            println!("No spaced: {}", input.replace(" ", ""));
-        },
-        "--slugify" | "-s" => {
-            println!("Slugified: {}", slugify(&input));
-        }
-        _ => {
-            let flag_list = "--lowercase/-l, --uppercase/-u, --no-spaces/-ns, --slugify/-s";
-            panic!("Transformation flag {} is not exceptable flag! Available flags are: {}", flag, flag_list);
-        },
-        
-    }
-
+    let result = transform::transform(input, flag);
+    eprintln!("Transformed result: {}", result);
 }
