@@ -8,4 +8,5 @@ User can run the program with either cargo run as a dev mode or can compile the 
 ## HW3 User API:
 Improvement on the Previous work now error handling with `Result` and `eprintln!` is being added into the project. The code is modularized into seperate files and `main.rs` file being the entry point.
 - Multiline read feature is added
+- CSV string input parsing and pringing is added
 - Input multiline csv and then get back as string from multiline input, it encountered with error if csv records are malformed.

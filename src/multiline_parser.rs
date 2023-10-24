@@ -1,6 +1,7 @@
 use std::error::Error;
 use std::io::{self, BufRead};
 
+// Parse multiline as stream of string from user then trim the input for further processing
 pub fn receive_multiline_input_from_user() -> Result<String, Box<dyn Error>> {
     let mut lines = io::stdin().lock().lines();
     let mut input = String::new();

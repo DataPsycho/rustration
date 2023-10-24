@@ -4,6 +4,10 @@ mod transform;
 use multiline_parser::receive_multiline_input_from_user;
 use std::env;
 
+// This is the entry point of the program
+// It takes a flag from the command line for example: --lowercase or -l and then transform the input using the flag. It prints the result
+// # Example:
+// cargo run -- --lowercase
 fn main() {
     let args: Vec<String> = env::args().collect();
     let flag = flag::parse_flag(args).unwrap_or_else(|e| {
