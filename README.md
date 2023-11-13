@@ -13,3 +13,6 @@ Improvement on the Previous work now error handling with `Result` and `eprintln!
 
 ## HW4 Add Multi Threading to the 
 Improving on the previous work by implementing the mpsc based message passing multi threading where there is a recevier and sender. Main thread receive the command and and the input text and then send the command tommand aind input to another thread for processing then receive the result from the worker thread to view the result on the main thread.
+
+# Useful Commands:
+- Listening to a port with netcat cli: `nc -lk 8089`.
