@@ -51,4 +51,4 @@ Following log will be shown when running the Applciation.
 
 **Commands:**
 `RUST_LOG=info cargo run --bin server` to run the the Server
-`RUST_LOG=info cargo run` to run the Client
+`RUST_LOG=info cargo run --bin client` to run the Client
