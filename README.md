@@ -22,6 +22,24 @@ The server ca receive them as bytes and then decodes the Rust Serialized object 
 [2023-11-21T12:05:25Z INFO  rustration] Server config is created from default: 127.0.0.1:8089
 [2023-11-21T12:05:25Z INFO  server] Server listening on 127.0.0.1:8089
 [2023-11-21T12:05:32Z INFO  server] 7fc2fb78-c48c-47a1-9d3a-d1a8d4d83f00 Received image
+...
+```
+
+# Useful Commands:
+- Listening to a port with netcat cli: `nc -lk 8089`.
+
+## HW Lesson 11: Rust Ecosystem
+- Project is divided into lib, client and server
+    - Server runs as binary
+    - Client runs from the main file
+    - Library has shared code
+- Env Logger along with logger is being added
+- UUID is being used to diffierenciate each request
+Following log will be shown when running the Applciation.
+```
+[2023-11-21T12:05:25Z INFO  rustration] Server config is created from default: 127.0.0.1:8089
+[2023-11-21T12:05:25Z INFO  server] Server listening on 127.0.0.1:8089
+[2023-11-21T12:05:32Z INFO  server] 7fc2fb78-c48c-47a1-9d3a-d1a8d4d83f00 Received image
 [2023-11-21T12:05:32Z INFO  server] 7fc2fb78-c48c-47a1-9d3a-d1a8d4d83f00 Message length: 2175276
 [2023-11-21T12:05:32Z INFO  server] a14e1b95-a0cc-4f94-ae6f-50c7fd40b3f4 Received text
 [2023-11-21T12:05:32Z INFO  server] a14e1b95-a0cc-4f94-ae6f-50c7fd40b3f4 Message length: 25
@@ -30,6 +48,3 @@ The server ca receive them as bytes and then decodes the Rust Serialized object 
 [2023-11-21T12:05:32Z INFO  server] bda20fc2-1310-42b3-a238-ba42d57efa5f Received quit message
 [2023-11-21T12:05:32Z INFO  server] bda20fc2-1310-42b3-a238-ba42d57efa5f Message length: 4
 ```
-
-# Useful Commands:
-- Listening to a port with netcat cli: `nc -lk 8089`.
