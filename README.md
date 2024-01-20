@@ -48,3 +48,7 @@ Following log will be shown when running the Applciation.
 [2023-11-21T12:05:32Z INFO  server] bda20fc2-1310-42b3-a238-ba42d57efa5f Received quit message
 [2023-11-21T12:05:32Z INFO  server] bda20fc2-1310-42b3-a238-ba42d57efa5f Message length: 4
 ```
+
+**Commands:**
+`RUST_LOG=info cargo run --bin server` to run the the Server
+`RUST_LOG=info cargo run` to run the Client
